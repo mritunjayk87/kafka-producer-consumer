@@ -1,0 +1,13 @@
+spring:
+  application:
+  name: csms-authentication-service
+  kafka:
+    bootstrap-servers=localhost:9092
+    consumer.group-id=user-group
+    consumer.auto-offset-reset=earliest
+    consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+    consumer.value-deserializer=org.springframework.kafka.support.serializer.JsonDeserializer
+    consumer.properties.spring.json.trusted.packages=*
+
+server:
+  port: 8081
